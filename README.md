@@ -1,27 +1,42 @@
-Auto-Config PHP
-Auto-Config é um script PHP que automatiza a configuração de uma máquina para um projeto específico, analisando o arquivo composer.json e utilizando a API da OpenAI.
+# AutoConfig
+AutoConfig é um pacote PHP que automatiza a configuração de projetos com base nas informações de seu repositório no GitHub e no arquivo `composer.json`.
 
-Instalação
-Para instalar o Auto-Config, você pode clonar este repositório ou baixar o arquivo auto-config.php diretamente.
+## Requisitos
 
-bash
-Copy code
-git clone https://github.com/aeusteixeira/AutoConfig.git
-Uso
-Para usar o Auto-Config, execute o script auto-config.php e forneça a URL do projeto no GitHub quando solicitado.
+- PHP 7.4 ou superior
+- Composer
+- Uma conta no GitHub com um repositório do projeto
+- Um token do GitHub
+- Um token da OpenAI
 
-bash
-Copy code
+## Instalação
+
+1. Instale o pacote via Composer:
+
+```bash
+composer require aeusteixeira/auto-config
+```
+
+2. Configure as variáveis de ambiente necessárias no seu arquivo .env:
+```bash
+OPENAI_TOKEN=
+OPEN_IA_ORGANIZATION=
+GITHUB_TOKEN=
+```
+
+#Uso
+Execute o script auto-config.php no terminal:
+```bash
 php auto-config.php
-O script irá:
+```
+Quando solicitado, insira a URL do seu repositório no GitHub. O script então fará o seguinte:
 
-Solicitar a URL do projeto no GitHub.
-Buscar o projeto no GitHub e obter o arquivo composer.json.
-Analisar o arquivo composer.json.
-Conectar-se à API da OpenAI.
-Configurar a máquina de acordo com as informações obtidas.
-Contribuição
-Contribuições são sempre bem-vindas! Por favor, leia as diretrizes de contribuição primeiro.
+- Recupera as informações do repositório do GitHub
+- Analisa o arquivo composer.json e configura as dependências necessárias
+- Usa a API da OpenAI para executar configurações adicionais
+  
+# Contribuições
+Contribuições são bem-vindas! Sinta-se à vontade para abrir um issue ou enviar um pull request.
 
-Licença
-MIT
+# Licença
+Este projeto está sob a licença MIT. Veja o arquivo LICENSE para mais detalhes.
